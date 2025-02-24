@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn::after {
+            content: attr(data-hover);
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            bottom: 120%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .btn:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="contact.html" class="btn" title="Contact Us" data-hover="Get in touch with us via email.">Email</a>
+    <a href="reviews.html" class="btn" title="Customer Reviews" data-hover="See what our customers are saying.">Reviews</a>
+    <a href="video.html" class="btn" title="Watch Video" data-hover="Click to play the video.">Play Video</a>
+    <a href="write-review.html" class="btn" title="Leave a Review" data-hover="Share your feedback with us.">Write a Review</a>
+    <button class="btn" title="Next Slide" data-hover="Click to see the next slide.">→</button>
+    <button class="btn" title="Previous Slide" data-hover="Click to go back to the previous slide.">←</button>
+
+    <div class="button-container">
+        <a href="contact.html" class="btn">Email</a>
+        <p class="button-info">Get in touch with us via email.</p>
+      </div>
+
+      
+
+</body>
+</html>
